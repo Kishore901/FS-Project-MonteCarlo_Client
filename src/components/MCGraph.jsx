@@ -34,7 +34,7 @@ const MCGraph = ({ dataItems }) => {
   };
 
   return (
-    <div className="w-80 bg-white p-2 hover:shadow-xl">
+    <div className="w-60 md:w-80 bg-white p-2 hover:shadow-xl">
       <h1>Portfolio suggested by monte carlo simulation</h1>
       {dataItems.length > 0 ? (
         <Pie data={data} />

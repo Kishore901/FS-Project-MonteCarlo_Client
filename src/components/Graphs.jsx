@@ -49,7 +49,7 @@ const Graphs = ({ presentItems }) => {
   };
 
   return (
-    <div className="w-80 bg-white p-2 hover:shadow-xl">
+    <div className="w-60 md:w-80 bg-white p-2 hover:shadow-xl">
       <h1>User's current portfolio</h1>
       <Pie data={data} />
     </div>

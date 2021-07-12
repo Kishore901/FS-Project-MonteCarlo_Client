@@ -7,7 +7,7 @@ import { Auth0Provider } from '@auth0/auth0-react';
 ReactDOM.render(
   <Auth0Provider
     domain="kishu.us.auth0.com"
-    clientId="dbc2MLIlOJOWkH8dd3NhnZMeOj9ndKaL"
+    clientId={process.env.REACT_APP_CLIENT_ID}
     redirectUri={'http://localhost:3000/dashboard'}
   >
     <App />

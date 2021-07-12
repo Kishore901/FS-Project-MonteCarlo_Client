@@ -192,8 +192,8 @@ const Dashboard = () => {
         </div>
       </Modal>
       <Username />
-      <div className="flex m-2 p-2 justify-between mx-8">
-        <div className="ml-12">
+      <div className="flex flex-col md:flex-row m-2 p-2 items-center md:items-start justify-center md:justify-between mx-8">
+        <div className="mb-5 md:ml-12">
           <div>
             {/* Empty input field */}
             <div>
@@ -205,7 +205,7 @@ const Dashboard = () => {
                 }}
                 type="text"
                 placeholder="Stock Ticker"
-                className="stockInput mr-2"
+                className="stockInput w-24 md:w-28 mr-2"
               />
               <input
                 required
@@ -216,11 +216,11 @@ const Dashboard = () => {
                 type="number"
                 min="1"
                 placeholder="Qnt"
-                className="stockQuant mr-10 w-20 p-1"
+                className="stockQuant mr-2 md:mr-10 w-20 p-1"
               />
               <button
                 onClick={handleAddition}
-                className="mr-8 ring-2 ring-blue-400 px-3 rounded-md hover:bg-blue-400 hover:text-white py-1"
+                className="md:mr-8 ring-2 ring-blue-400 px-3 rounded-md hover:bg-blue-400 hover:text-white py-1"
               >
                 <FontAwesomeIcon icon={faPlus} className="mr-2" />
                 Add
@@ -229,13 +229,16 @@ const Dashboard = () => {
             {/* Input with users current data */}
             {presentItems.map((data) => (
               <div>
-                <div className="inline-block mt-4 mr-8 w-52 uppercase">
+                <div className="inline-block mt-4 mr-8 w-28 md:w-52 uppercase">
                   {data[0]}
                 </div>
                 <div className="inline-block mt-4 mr-12 text-right">
                   {data[1]}
                 </div>
-                <button onClick={(e) => finddata(e)} className="mr-8 updateBtn">
+                <button
+                  onClick={(e) => finddata(e)}
+                  className="mr-8 mt-4 md:mt-0 updateBtn"
+                >
                   <FontAwesomeIcon icon={faEdit} className="mr-2" />
                   Update
                 </button>
@@ -248,7 +251,7 @@ const Dashboard = () => {
           </div>
         </div>
         {/* Tables */}
-        <div className="mr-12 flex flex-col justify-center">
+        <div className="md:mr-12 flex flex-col justify-center">
           {/* Table with percentages of present values */}
           <Tables presentItems={presentItems} />
           {/* Monte carlo simulation only when there is more than single data */}
@@ -271,7 +274,7 @@ const Dashboard = () => {
       </div>
       {mcItems.length > 0 && (
         <div className="text-center bg-gray-200 p-4">
-          <div className="flex justify-around items-center">
+          <div className="flex flex-col md:flex-row justify-around items-center">
             <Graphs presentItems={presentItems} />
             <MCGraph dataItems={mcItems} />
           </div>
